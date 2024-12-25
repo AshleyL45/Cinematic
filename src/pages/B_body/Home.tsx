@@ -1,12 +1,12 @@
 import {FC} from 'react';
 import Pages from "../../components/layout/Pages";
 
-const Login: FC<{}> = ({}) => {
+const Home: FC<{}> = ({}) => {
     return (
         <Pages title={"Login"}>
-            <h1>Coucou, je suis dans Login</h1>
+            <h1>Coucou, je suis dans Home</h1>
         </Pages>
     );
 };
 
-export default Login;
+export default Home;
