@@ -1,8 +1,11 @@
+// src/components/LoginForm.tsx
+
 import {FC, useContext} from 'react';
 import {Box, Button, Card, Stack, TextField, useTheme} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {AuthContext} from "../../contexts/AuthContext";
+import './loginForm.css'; // Assurez-vous que le fichier CSS est correctement importé
 
 interface LoginFormInput {
     email: string;
@@ -33,42 +36,38 @@ const LoginForm: FC = () => {
     };
 
     return (
-        <Card
-            sx={{
-                bgcolor: theme.palette.background.paper,
-                p: 2,
-                width: 300,
-            }}
-        >
-            <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': {m: 1, width: '25ch'},
-                }}
-                onSubmit={handleSubmit(onSubmit)}
-            >
-                <Stack spacing={2}>
-                    <TextField
-                        label="Email"
-                        variant="outlined"
-                        {...register("email")}
-                    />
-                    <TextField
-                        label="Mot de passe"
-                        variant="outlined"
-                        type="password"
-                        {...register("password")}
-                    />
-                    <Button
-                        variant="contained"
-                        type="button" // Important : Ne pas valider le formulaire
-                        onClick={redirectToDashboard} // Redirige même sans validation
-                    >
-                        Connexion
-                    </Button>
-                </Stack>
-            </Box>
-        </Card>
+        <div className="login-container">
+            <Card className="login-card">
+                <Box
+                    component="form"
+                    className="login-form"
+                    onSubmit={handleSubmit(onSubmit)}
+                >
+                    <Stack spacing={2} style={{height: '100%'}}>
+                        <TextField
+                            placeholder="Email"
+                            variant="outlined"
+                            {...register("email")}
+                        />
+                        <TextField
+                            placeholder="Mot de passe"
+                            variant="outlined"
+                            type="password"
+                            {...register("password")}
+                        />
+                        {/* Élément Spacer */}
+                        <Box style={{flexGrow: 1}}></Box>
+                        <Button
+                            variant="contained"
+                            type="submit"
+                            className="login-button-submit"
+                        >
+                            Se Connecter
+                        </Button>
+                    </Stack>
+                </Box>
+            </Card>
+        </div>
     );
 };
 
