@@ -1,10 +1,11 @@
 import {FC} from 'react';
 import Pages from "../../components/layout/Pages";
+import LoginForm from "../../components/auth/LoginForm";
 
 const Home: FC<{}> = ({}) => {
     return (
         <Pages title={"Login"}>
-            <h1>Coucou, je suis dans Home</h1>
+            <LoginForm/>
         </Pages>
     );
 };
