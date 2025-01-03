@@ -1,0 +1,57 @@
+/* src/components/loginForm.css */
+
+/* Style global pour le conteneur de la page de connexion */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de la vue */
+    background-color: black; /* Fond noir */
+}
+
+/* Style pour la carte de connexion */
+.login-card {
+    padding: 40px;
+    background-color: #1e1e1e; /* Couleur légèrement différente pour la carte */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    width: 300px; /* Largeur fixe de la carte */
+    min-height: 200px; /* Hauteur minimale pour accueillir l'espace */
+}
+
+/* Style pour le formulaire */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Assure que le formulaire prend toute la hauteur de la carte */
+}
+
+/* Style pour le bouton de soumission */
+.login-button-submit {
+    margin-top: 20px; /* Espace au-dessus du bouton */
+    background-color: #F4400D;
+    color: white;
+    border-radius: 40px;
+    font-family: 'Octanis-sans', sans-serif;
+    font-weight: bolder;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+/* Effets au survol des boutons */
+.login-button-submit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: #85270a;
+}
+
+/* Effets lors du clic sur les boutons */
+.login-button-submit:active {
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+/* Style pour les champs de texte */
+.login-form .MuiTextField-root {
+    background-color: white;
+    border-radius: 4px;
+}
